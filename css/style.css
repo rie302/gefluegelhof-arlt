@@ -1,0 +1,263 @@
+/* Grundlayout */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 20px;
+  background: #f5f5f5;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-size: clamp(0.94rem, 0.2vw + 0.9rem, 1rem);
+}
+
+/* Header */
+.hero-banner {
+  background: url('../img/gaenseWiese.jpg') center/cover no-repeat;
+  max-width: 960px;
+  height: 220px;
+  margin: 0 auto;
+  border: 4px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow:
+    1px 1px 0 black,
+    -1px 1px 0 black,
+    1px -1px 0 black,
+    -1px -1px 0 black;
+}
+
+.hero-banner h1 {
+  margin: 0;
+  padding: 0 12px;
+  text-align: center;
+  font-size: clamp(1.35rem, 4.2vw, 2.4rem);
+}
+
+/* Navigation */
+.main-nav {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  background: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.main-nav ul {
+  margin: 0;
+  padding: 12px 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
+  padding: 6px 8px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.main-nav a:hover {
+  color: #ffcc00;
+  transform: translateY(-2px);
+}
+
+.main-nav a.active {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* Inhalte */
+main {
+  max-width: 960px;
+  margin: 28px auto;
+  padding: 28px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+h2 {
+  margin-top: 40px;
+  color: #7a5f3b;
+  text-align: center;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+main p {
+  line-height: 1.7;
+}
+
+section {
+  margin-top: 50px;
+  padding: 10px;
+}
+
+/* Preise */
+.price-section {
+  max-width: 700px;
+  margin: 30px auto;
+  line-height: 1.7;
+}
+
+.small-date {
+  margin-top: -10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.price-section h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.price-table td {
+  padding: 8px 4px;
+  border-bottom: 1px solid #ddd;
+}
+
+.price-table tr:last-child td {
+  border-bottom: none;
+}
+
+.price-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Kontaktkarte */
+.map-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  aspect-ratio: 4 / 3;
+}
+
+/* Galerie */
+.masonry {
+  columns: 3;
+  column-gap: 1.2rem;
+}
+
+.mitem {
+  break-inside: avoid;
+  margin-bottom: 1.2rem;
+  padding: 8px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.mitem img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.mitem p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #444;
+}
+
+/* Hofbild + Oeffnungszeiten */
+.hof-hours-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 24px;
+}
+
+.hof-hours-layout > h3 {
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 0 0 8px;
+  text-align: left;
+}
+
+.hof-hours-image {
+  flex: 2 1 420px;
+}
+
+.hof-hours-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+}
+
+.oeffnungszeiten {
+  flex: 1 1 220px;
+  padding: 16px 18px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.oeffnungszeiten h3 {
+  margin-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (max-width: 720px) {
+  .hof-hours-layout {
+    flex-direction: column;
+  }
+
+  .hof-hours-image,
+  .oeffnungszeiten {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-banner {
+    height: 140px;
+  }
+
+  main {
+    padding: 18px;
+  }
+
+  .masonry {
+    columns: 1;
+  }
+}
